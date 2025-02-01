@@ -1,0 +1,96 @@
+<!-- показываем, что данный файл будет работать на стандартизированном языке гипертекстовой разметки документов для просмотра веб-страниц в браузере (или же просто HTML) -->
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Curriculum</title>
+		<link rel="shortcut icon" type="image/x-icon" href="logo/resume.png" />
+		<style>
+			/* импортирование шрифта с сайта google fonts */
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@200;400;500;600;800&family=Russo+One&family=Ubuntu:wght@400;500;700&display=swap');
+			/* base styles - в этом разделе обычно прописываем body, head, *(соответствие всем элементам на странице.) и :root */
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+				background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+					url(other/pictures/wallpaper.jpg);
+				font-family: 'Open Sans', sans-serif;
+			}
+			/* стили у кнопки */
+			.button {
+				background-color: #007bff;
+				color: white;
+				padding: 15px 30px;
+				font-size: 18px;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: transform 0.2s;
+			}
+			.button:hover {
+				transform: scale(1.1);
+			}
+			/* окно */
+			.modal {
+				display: none;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: white;
+				padding: 35px 20px 10px 20px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+				border-radius: 5px;
+				font-size: 17.5px;
+			}
+			/* элемент закрытия окна */
+			.close {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				cursor: pointer;
+				font-size: 24px;
+				color: rgb(255, 0, 0);
+			}
+			.file {
+				color: #007bff;
+				cursor: pointer;
+			}
+			.grades {
+				color: #00aaff;
+				cursor: pointer;
+			}
+			.options {
+				cursor: pointer;
+				color: #00aaff;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="button" onclick="openModal()">Открыть окно</button>
+
+		<div class="modal" id="modal">
+			<span class="close" onclick="closeModal()">&times;</span>
+			<p>Посещаемость: 100%</p>
+			<p>Расписание: <span class="file">файл</span></p>
+			<p class="grades">Оценки</p>
+			<p>Сроки сдачи: <span class="file">файл</span></p>
+			<p class="options">Другие опции</p>
+		</div>
+
+		<!-- работа с JS -->
+		<script>
+			function openModal() {
+				document.getElementById('modal').style.display = 'block'
+			}
+			function closeModal() {
+				document.getElementById('modal').style.display = 'none'
+			}
+		</script>
+	</body>
+</html>
+<!-- конец файла. -->
